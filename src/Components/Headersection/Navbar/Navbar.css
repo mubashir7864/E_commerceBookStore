@@ -1,0 +1,50 @@
+.logo{
+    font-family: fantasy;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0em;
+    color: rgba(0, 0, 0, 0.8); 
+}
+.icons{
+    width: 30px;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-right: 25px;
+}
+.icons:hover{
+    color: black;
+}
+.nav-container{
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+}
+.search-area{
+    width: 400px;
+    height: 40px;
+    border-radius: 6px 0 0 6px;
+    border-color: transparent;
+    padding: 3px;
+    padding-left: 8px;
+    color: #676f75;
+    font-size: 16px;
+    border: 1px rgb(151, 149, 149) solid;
+}
+
+
+.search-btn{
+    border-radius: 0 6px 6px 0 ;
+    border-color: transparent;
+    height: 50px;
+    padding-bottom: 2px;
+    margin: 3px;
+    width: 50px;
+    font-weight: 700;
+    background-color: white;
+}
+.search-btn:hover{
+    background-color: hwb(202 63% 29%);
+}
