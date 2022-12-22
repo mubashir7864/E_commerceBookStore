@@ -1,0 +1,58 @@
+.hero{
+    background-size: cover;
+    min-height: 600px;
+    max-height: 600px;
+    background-image: url("../../../../public/images/pexels-jess-bailey-designs-1018136.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    display: grid;
+    grid-template-rows: 2fr 2fr  ;
+    grid-template-columns:2fr 1fr;
+    /* padding: 40px; */
+    text-align: center;
+    background-image: linear-gradient(180 , black,transparent);
+    padding-bottom: 60px;
+}
+.hero-title{
+    font-family: cursive;
+    font-size: 80px;
+    color: rgba(0, 0, 0, 0.9);
+    max-width: 700px;
+    text-align: center;
+    padding-left: 180px;
+
+}
+.BookCat{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9); ;
+}
+
+.hero-subT{
+    color:  hwb(202 44% 42%);
+    font-weight: 500;
+    font-size: 21px;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 2;
+}
+.hero-btn{
+    width: 180px;
+    grid-row: -2 ;
+    margin-top: 20px;
+    grid-column: 2;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 2px;
+    border: none;
+}
+.iconbtn{
+    margin-left: 25px;
+}
+.hero-btn:hover{
+    background-color: hwb(202 63% 29%); ;
+}

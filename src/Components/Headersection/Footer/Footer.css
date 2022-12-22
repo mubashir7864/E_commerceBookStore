@@ -1,0 +1,51 @@
+.footer{
+    text-align: center;
+    height: 260px;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #A3C2BC;
+}
+.email-logo:hover{
+    color:#202E36;
+}
+.email:hover{
+    color: #202E36;
+}
+
+.email{
+    color: #303336;
+    font-size: 21px;
+    font-weight: 600;
+
+}
+
+.email-logo{
+    color: #303336;
+    padding-top: 10px;
+    margin-right: 15px;
+    font-size: 22px;
+}
+.about{
+    display: flex;
+    margin-left: 85px;
+    padding-bottom: 30px;
+    /* align-items: center; */
+    /* text-align: center; */
+    justify-content: center;
+    /* padding-left: 15px; */
+}
+.about-section{
+    padding-top: 80px;
+}
+
+li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 160px;
+}
+.copy{
+    margin-top: 10px;
+    padding-top: 10px;
+}
