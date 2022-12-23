@@ -25,7 +25,7 @@ export default function Navbar(){
             </div>
             <div className="user-tray">
                 <Link to="/"><FontAwesomeIcon icon={faHome} className="icons" onClick={()=>setSearch("")} /></Link>
-                <Link to="/favroites"><FontAwesomeIcon icon={faHeart}  className="icons"/></Link>    
+                <Link to="/favroites"><FontAwesomeIcon icon={faHeart}  className="icons" onClick={()=>setSearch("")}/></Link>    
                 <Link to="/signIn" ><FontAwesomeIcon icon={faUser} className="icons"/></Link>
                 <Link to= "/MyCart"><FontAwesomeIcon icon={faCartShopping} className="icons"/></Link>
             </div>

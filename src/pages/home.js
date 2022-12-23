@@ -8,7 +8,7 @@ import { searchContext } from '../Components/constjs/const'
 
 
 function Home() {
-  const{ search ,menuuserwish} = useContext(searchContext)
+  const{ search , menuuserwish} = useContext(searchContext)
   return (
     <div>
         <Navbar />

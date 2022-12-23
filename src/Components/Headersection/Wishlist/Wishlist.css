@@ -1,0 +1,74 @@
+.wish-section{
+    width: 100%;
+}
+.wish-container{
+    padding: 45px;
+    margin: 50px;
+    color:  rgba(0, 0, 0, 0.7);
+}
+.wish-subtite{
+    color: rgba(0, 0, 0, 0.8);
+}
+hr{
+    color: #676f75;
+
+}
+.perwishbook{
+    padding: 25px 45px 10px 45px;
+    border: lightgray 1px solid;
+    border-radius: 4px;
+    height: 230px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-areas: "wishbookimg both"
+    "wishbookimg wishbookauthor"
+    "wishbookimg wishbookrating"
+    "wishbookimg wishbookrate";
+}
+.both{
+    display: flex;
+    justify-content: space-between;
+    grid-area: both;
+}
+.wishbookimg{
+    height: 180px;
+    
+    box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+    -webkit-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+    -moz-box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+
+    margin: 25px;
+    grid-area: wishbookimg;
+}
+.wishbooktitle{
+    grid-area: wishbooktitle;
+    font-size: 20px;
+}
+.trash{
+    grid-area: trash;
+}
+.trash:hover{
+    color: black;
+}
+.wishbookauthor{
+    grid-area: wishbookauthor;
+    color: #676f75;
+    font-weight: 400;
+    margin-top: -5px;
+
+}
+.nooavail{
+    color: red;
+}
+.wishbookrating{
+    grid-area: wishbookrating;
+    color:  rgb(8, 181, 8);
+    font-weight: 700;
+    margin-top: -4px;
+}
+.wishbookrate{
+    grid-area: wishbookrate;
+    font-size: 15px;
+    margin-top: -6px;
+}

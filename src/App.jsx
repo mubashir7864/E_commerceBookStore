@@ -11,10 +11,24 @@ import { useState } from "react";
 export default function App(){
   const [search , setSearch] = useState()
   const [menuuserwish , setmenuuserwish] = useState()
+  const [wishlist , setwishlist]=useState([])
+
+  const addtofav = (book)=>{
+    const existingfav = [...wishlist]
+    const newfav = existingfav.concat(book)
+    setwishlist(newfav)
+  }
+
+  const removefav = (id)=>{
+    const existingfav = [...wishlist]
+    const newfav = existingfav.filter((book) => book.id !== id)
+    setwishlist(newfav)
+  }
   
   return(
     <React.Fragment>
-      <searchContext.Provider value={{search , setSearch , menuuserwish , setmenuuserwish}}>
+      <searchContext.Provider value={{search , setSearch , menuuserwish , setmenuuserwish , wishlist , setwishlist 
+      , addtofav , removefav}}>
              <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/BookCategories"  element={<Bookview />} />
