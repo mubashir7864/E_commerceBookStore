@@ -12,6 +12,20 @@ export default function App(){
   const [search , setSearch] = useState()
   const [menuuserwish , setmenuuserwish] = useState()
   const [wishlist , setwishlist]=useState([])
+  const [ cartitems , setcart] =useState([])
+  const [total , settotal] = useState(0)
+  
+  
+  const addtocart = (book)=>{
+    const existingcart = [...cartitems]
+    const newcart = existingcart.concat(book)
+    setcart(newcart)
+  }
+  const removefromcart = (id)=>{
+    const existingcart = [...cartitems]
+    const newcart = existingcart.filter((book) => book.id !== id)
+    setcart(newcart)
+  }
 
   const addtofav = (book)=>{
     const existingfav = [...wishlist]
@@ -28,7 +42,7 @@ export default function App(){
   return(
     <React.Fragment>
       <searchContext.Provider value={{search , setSearch , menuuserwish , setmenuuserwish , wishlist , setwishlist 
-      , addtofav , removefav}}>
+      , addtofav , removefav , addtocart , removefromcart , cartitems ,setcart , total , settotal}}>
              <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/BookCategories"  element={<Bookview />} />

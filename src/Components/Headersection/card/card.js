@@ -1,5 +1,5 @@
-import { faHeart , faArrowAltCircleLeft , faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons"
-import { faHeart as heart} from "@fortawesome/free-solid-svg-icons"
+import { faHeart , faArrowAltCircleLeft , faArrowAltCircleRight  } from "@fortawesome/free-regular-svg-icons"
+import { faHeart as heart , faShoppingCart} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useContext, useEffect, useRef, useState } from "react"
 //import axios from "axios"
@@ -13,7 +13,7 @@ import "./Card.css"
 
 
 export default function Card(props)
-{   const {setwishlist , wishlist , addtofav , removefav} = useContext(searchContext)
+{   const {setwishlist , wishlist , addtofav , removefav ,addtocart , cartitems , removefromcart} = useContext(searchContext)
     const [book , setbook] = useState([])
     const ref=useRef(null)
     const scroll = (scrollOffset) => {
@@ -22,7 +22,11 @@ export default function Card(props)
     const favroitecheck = (id) =>{
         const bool = wishlist.some((book)=> book.id == id)
         return bool
-    }  
+    } 
+    const cartcheck =(id)=>{
+        const boola = cartitems.some((booke)=> booke.id == id)
+        return boola
+    } 
 
     
     useEffect(()=>{
@@ -54,7 +58,7 @@ export default function Card(props)
                         <img className="card-img" src={ele.volumeInfo.imageLinks ? `${ele.volumeInfo.imageLinks.smallThumbnail}` : `image not available`} alt="cardimage" />
                         <h3 className="card-title">{ele.volumeInfo.title ? ele.volumeInfo.title : ""}</h3>
                         <p className="card-sub"><span className="card-rating">{ele.volumeInfo.averageRating ? "(" + `${ele.volumeInfo.averageRating}`+".0)" : "(4.5)"}</span></p>
-                        <h3 className="card-amount">{ele.saleInfo.saleability === "FOR_SALE" ? `Rs: ${Number(ele.saleInfo.retailPrice.amount)}`: "Out of Stock" }</h3>
+                        <h3 className="card-amount">{ele.saleInfo.saleability === "FOR_SALE" ? `Rs: ${Number(ele.saleInfo.retailPrice.amount)}`: "Out of Stock" }</h3>{ cartcheck(ele.id) ? <span onClick={()=>removefromcart(ele.id)}><FontAwesomeIcon  className="shoppingcart falsy" icon={faShoppingCart}/></span> : <span onClick={()=>addtocart(ele)}> <FontAwesomeIcon   className="shoppingcart truly" icon={faShoppingCart}/></span>}
                     </div>
                 ) })    
                 }
