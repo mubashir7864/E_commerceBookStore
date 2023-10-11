@@ -9,11 +9,13 @@ import Loginpage from "./pages/Loginpage";
 import { searchContext } from "./Components/constjs/const";
 import { useState } from "react";
 export default function App(){
+  const [book , setbook] = useState([])
   const [search , setSearch] = useState()
   const [menuuserwish , setmenuuserwish] = useState()
   const [wishlist , setwishlist]=useState([])
   const [ cartitems , setcart] =useState([])
   const [total , settotal] = useState(0)
+  const [count , setCount] = useState(0)
   
   
   const addtocart = (book)=>{
@@ -38,16 +40,23 @@ export default function App(){
     const newfav = existingfav.filter((book) => book.id !== id)
     setwishlist(newfav)
   }
+  const incre = (id)=>{
+   cartitems?.map((ele)=>{
+    if(id == ele.id){
+      return setCount((precount)=> precount + 1)
+    }
+   })
+  }
   
   return(
     <React.Fragment>
       <searchContext.Provider value={{search , setSearch , menuuserwish , setmenuuserwish , wishlist , setwishlist 
-      , addtofav , removefav , addtocart , removefromcart , cartitems ,setcart , total , settotal}}>
+      , addtofav , removefav , addtocart , removefromcart , cartitems ,setcart , total , settotal , book , setbook }}>
              <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/BookCategories"  element={<Bookview />} />
                   <Route path="/favroites" element={<Favro />} />
-                  <Route path="/MyCart" element={<AddtoCart />} />
+                  <Route path="/MyCart" element={<AddtoCart click={incre} view={count} />} />
                   <Route path="/signin" element={<SignIn />} />
                   <Route path="/Login" element={<Loginpage />} />
             </Routes> 

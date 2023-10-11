@@ -13,8 +13,8 @@ import "./Card.css"
 
 
 export default function Card(props)
-{   const {setwishlist , wishlist , addtofav , removefav ,addtocart , cartitems , removefromcart} = useContext(searchContext)
-    const [book , setbook] = useState([])
+{   const {setwishlist , wishlist , addtofav , removefav ,addtocart , cartitems , removefromcart , book , setbook} = useContext(searchContext)
+    //const [book , setbook] = useState([])
     const ref=useRef(null)
     const scroll = (scrollOffset) => {
         ref.current.scrollLeft += scrollOffset;
